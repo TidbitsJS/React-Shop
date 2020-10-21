@@ -14,3 +14,23 @@ body {
   background: var(--mainWhite);
   color: var(--mainBlack);
 }
+
+.btn-pink {
+  color: var(--mainPink) !important;
+  border-color: var(--mainPink) !important;
+}
+
+.btn-black {
+  color: var(--mainBlack) !important;
+  border-color: var(--mainBlack) !important;
+}
+
+.btn-black:hover {
+  color: var(--mainPink) !important;
+  background-color: var(--mainBlack);
+}
+
+.btn-pink:hover {
+  color: var(--mainBlack) !important;
+  background-color: var(--mainPink);
+}
