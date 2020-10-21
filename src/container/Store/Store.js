@@ -2,9 +2,25 @@ import React, { Component } from "react";
 import { Container, Row, Col, InputGroup, FormControl } from "react-bootstrap";
 import "./store.css";
 import CardItem from "./Data/Card";
+import { data } from "./Data/Data";
 
 class Store extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      items: data,
+    };
+  }
   render() {
+    const displayItem = (btn) => {
+      console.log(btn);
+      if (btn === "all") return this.setState({ items: data });
+      this.setState({
+        items: data.filter((item) => item.category === btn),
+      });
+    };
+
     const sortButtons = ["all", "cakes", "cupcakes", "sweets", "doughnuts"].map(
       (btn, index) => (
         <a
@@ -12,6 +28,7 @@ class Store extends Component {
           key={index + btn}
           className="btn btn-black text-uppercase filter-btn m-2"
           data-filter={btn}
+          onClick={() => displayItem(btn)}
         >
           {btn}
         </a>
@@ -56,7 +73,11 @@ class Store extends Component {
               </InputGroup>
             </Col>
           </Row>
-          <CardItem />
+          <Row className="store-items" id="store-items">
+            {this.state.items.map((cartItem, index) => (
+              <CardItem data={cartItem} key={index + cartItem.name} />
+            ))}
+          </Row>
         </Container>
       </section>
     );

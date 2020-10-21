@@ -18,8 +18,8 @@ class Header extends Component {
             <Nav className="text-capitalize mx-auto">
               <Nav.Link href="#home">home</Nav.Link>
               <Nav.Link href="#store">Store</Nav.Link>
-              <Nav.Link href="#services">Services</Nav.Link>
-              <Nav.Link href="#cakes">cakes</Nav.Link>
+              <Nav.Link href="#services">Service</Nav.Link>
+              <Nav.Link href="#cakes">order</Nav.Link>
               <Nav.Link href="#about">about</Nav.Link>
             </Nav>
             <Nav className="mx-lg-2 nav-info-items d-none d-lg-flex">
