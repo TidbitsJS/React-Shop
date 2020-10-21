@@ -12,7 +12,7 @@ export class CardItem extends Component {
         className="mx-auto store-item my-3"
         data-item={card.category}
       >
-        <Card>
+        <Card className="single-item">
           <div className="img-container">
             <Card.Img varaint="top" src={card.url} className="store-img" />
             <span className="store-item-icon">
