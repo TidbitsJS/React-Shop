@@ -1,0 +1,13 @@
+.services {
+  color: var(--mainWhite);
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../../images/servicesBcg.jpeg") center/cover fixed no-repeat;
+}
+
+.service-title {
+  letter-spacing: 0.5rem;
+}
+
+.service-text {
+  word-spacing: 0.5rem;
+}
