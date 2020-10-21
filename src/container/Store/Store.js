@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Container, Row, Col, InputGroup, FormControl } from "react-bootstrap";
+import "./store.css";
+import CardItem from "./Data/Card";
 
 class Store extends Component {
   render() {
-    const sortButtons = ["all", "cake", "cupcake", "sweet", "doughnut"].map(
+    const sortButtons = ["all", "cakes", "cupcakes", "sweets", "doughnuts"].map(
       (btn, index) => (
         <a
           href={"#" + btn}
@@ -54,6 +56,7 @@ class Store extends Component {
               </InputGroup>
             </Col>
           </Row>
+          <CardItem />
         </Container>
       </section>
     );
