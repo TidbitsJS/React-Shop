@@ -5,6 +5,7 @@ import About from "./container/About/About";
 import Store from "./container/Store/Store";
 import Service from "./container/Services/Service";
 import Order from "./container/Order/Order";
+import Footer from "./container/Footer/Footer";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Store />
       <Service />
       <Order />
+      <Footer />
     </div>
   );
 };
