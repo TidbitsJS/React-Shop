@@ -1,23 +1,44 @@
 import React, { Component } from "react";
 import { Card, Col } from "react-bootstrap";
 import { connect } from "react-redux";
-import { ADD_ITEM } from "../../components/actions/Action";
+import { ADD_ITEM, TOGGLE_AMOUNT } from "../../components/actions/Action";
 import { Link } from "react-router-dom";
 
 export class CardItem extends Component {
   render() {
     const addItem = (card) => {
       console.log("Item adding ... ", card.name);
-      this.props.dispatch({
-        type: ADD_ITEM,
-        payload: {
-          name: card.name,
-          price: card.price,
-          category: card.category,
-          cartImg: card.cartImg,
-          amount: card.amount,
-        },
+      let itemFound;
+      let itemCheck = this.props.cart.filter((item) => {
+        if (item.cartImg === card.cartImg) {
+          console.log("found");
+          itemFound = item;
+          return true;
+        }
+
+        return false;
       });
+
+      console.log("itemcheck", itemCheck);
+
+      if (itemCheck.length === 1) {
+        console.log("item checked");
+        this.props.dispatch({
+          type: TOGGLE_AMOUNT,
+          payload: { id: itemFound.id, toggle: "inc" },
+        });
+      } else {
+        this.props.dispatch({
+          type: ADD_ITEM,
+          payload: {
+            name: card.name,
+            price: card.price,
+            category: card.category,
+            cartImg: card.cartImg,
+            amount: card.amount,
+          },
+        });
+      }
     };
 
     const card = this.props.data;
@@ -58,4 +79,9 @@ export class CardItem extends Component {
   }
 }
 
-export default connect()(CardItem);
+const mapStateToProps = (store) => {
+  const { cart, total } = store;
+  return { cart, total };
+};
+
+export default connect(mapStateToProps)(CardItem);

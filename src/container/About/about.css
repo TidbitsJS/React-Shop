@@ -17,7 +17,7 @@
   height: 100%;
   outline: 0.5rem solid var(--mainYellow);
   z-index: -1;
-  transition: all 1s linear;
+  transition: all 0.5s linear;
 }
 
 .about-img_container:hover::before {
