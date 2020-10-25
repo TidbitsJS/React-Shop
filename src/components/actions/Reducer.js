@@ -5,17 +5,26 @@ import {
   REMOVE,
   GET_TOTALS,
   TOGGLE_AMOUNT,
+  ADD_ITEM,
 } from "./Action";
 
-import { initialItems } from "./Items";
+import { cartItem } from "./Items";
 
 const initialStore = {
-  cart: initialItems,
+  cart: cartItem,
   total: 0,
   amount: 0,
 };
 
 const reducer = (state = initialStore, action) => {
+  if (action.type === ADD_ITEM) {
+    let payload = action.payload;
+    console.log("state", payload, state.cart.length);
+    payload.id = state.cart.length + 1;
+    let tempcart = [...state.cart, payload];
+    return { ...state, cart: tempcart };
+  }
+
   if (action.type === CLEAR_CART) {
     return { ...state, cart: [] };
   }
@@ -49,7 +58,7 @@ const reducer = (state = initialStore, action) => {
     };
   }
 
-  if (action.tpe === GET_TOTALS) {
+  if (action.type === GET_TOTALS) {
     let { total, amount } = state.cart.reduce(
       (cartTotal, cartItem) => {
         const { price, amount } = cartItem;

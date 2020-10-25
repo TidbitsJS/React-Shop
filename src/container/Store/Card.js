@@ -1,8 +1,25 @@
 import React, { Component } from "react";
 import { Card, Col } from "react-bootstrap";
+import { connect } from "react-redux";
+import { ADD_ITEM } from "../../components/actions/Action";
+import { Link } from "react-router-dom";
 
 export class CardItem extends Component {
   render() {
+    const addItem = (card) => {
+      console.log("Item adding ... ", card.name);
+      this.props.dispatch({
+        type: ADD_ITEM,
+        payload: {
+          name: card.name,
+          price: card.price,
+          category: card.category,
+          cartImg: card.cartImg,
+          amount: card.amount,
+        },
+      });
+    };
+
     const card = this.props.data;
     return (
       <Col
@@ -16,7 +33,12 @@ export class CardItem extends Component {
           <div className="img-container">
             <Card.Img varaint="top" src={card.url} className="store-img" />
             <span className="store-item-icon">
-              <i className="fas fa-shopping-cart"></i>
+              <Link to="/cart">
+                <i
+                  className="fas fa-shopping-cart"
+                  onClick={() => addItem(card)}
+                ></i>
+              </Link>
             </span>
           </div>
           <Card.Body>
@@ -36,4 +58,4 @@ export class CardItem extends Component {
   }
 }
 
-export default CardItem;
+export default connect()(CardItem);
