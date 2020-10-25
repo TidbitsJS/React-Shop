@@ -15,8 +15,10 @@ class CartItem extends Component {
       <div className="cart-item">
         <img src={cartImg} alt={name} className="cart-img" />
         <div>
-          <h4>{name}</h4>
-          <h4 className="item-price">${price}</h4>
+          <h4 style={{ fontSize: "1.1rem" }}>{name}</h4>
+          <h4 style={{ fontSize: "0.8rem" }} className="item-price">
+            ${price}
+          </h4>
           <button className="remove-btn" onClick={() => remove()}>
             Remove
           </button>

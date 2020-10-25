@@ -12,7 +12,7 @@ const CartContainer = ({ cart = [], total, dispatch }) => {
     return (
       <section className="cart">
         <header>
-          <h2>Your Bag</h2>
+          <h2 style={{ color: "#ef7998", fontSize: "2.5rem" }}>Your Bag</h2>
           <h4 className="empty-cart">is currently Empty</h4>
         </header>
       </section>
@@ -22,18 +22,26 @@ const CartContainer = ({ cart = [], total, dispatch }) => {
   return (
     <section className="cart">
       <header>
-        <h2>Your Bag</h2>
+        <h2 style={{ color: "#ef7998", fontSize: "2.5rem" }}>Your Bag</h2>
       </header>
-      <article>
+      <article className="article-cart">
         {cart.map((item) => {
           return <CartItem key={item.id} {...item} />;
         })}
       </article>
       <footer>
-        <hr />
+        <hr style={{ border: "1px solid black" }} />
         <div className="cart-total">
-          <h4>
-            Total <span>${total}</span>
+          <h4
+            style={{
+              fontSize: "1.8rem",
+              backgroundColor: "rgba(0,0,0,0.4)",
+              padding: "1rem",
+              borderRadius: 5,
+              fontWeight: "bolder",
+            }}
+          >
+            Total <span style={{ color: "#fff" }}>${total}</span>
           </h4>
         </div>
         <button

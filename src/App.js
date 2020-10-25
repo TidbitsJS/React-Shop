@@ -34,7 +34,9 @@ const App = () => {
               <Footer />
             </Route>
             <Route exact path="/cart">
-              <CartContainer />
+              <section className="cart-page">
+                <CartContainer />
+              </section>
             </Route>
           </Switch>
         </div>

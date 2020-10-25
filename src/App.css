@@ -34,3 +34,12 @@ body {
   color: var(--mainBlack) !important;
   background-color: var(--mainPink);
 }
+
+.cart-page {
+  height: 100vh;
+  background: url("./images/headerBcg.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
