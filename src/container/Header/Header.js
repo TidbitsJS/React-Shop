@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Navbar, Nav, Container, Row, Col } from "react-bootstrap";
 import headericon from "../../images/logo.svg";
 import "./header.css";
+import { Link } from "react-router-dom";
 
 class Header extends Component {
   render() {
@@ -19,7 +20,7 @@ class Header extends Component {
               <Nav.Link href="#home">home</Nav.Link>
               <Nav.Link href="#store">Store</Nav.Link>
               <Nav.Link href="#services">Service</Nav.Link>
-              <Nav.Link href="#cakes">order</Nav.Link>
+              <Nav.Link href="#order">order</Nav.Link>
               <Nav.Link href="#about">about</Nav.Link>
             </Nav>
             <Nav className="mx-lg-2 nav-info-items d-none d-lg-flex">
@@ -28,17 +29,20 @@ class Header extends Component {
               </span>
               <p className="mb-0">+91 9834905510</p>
             </Nav>
-            <Nav
-              className="mx-lg-5 nav-info-items d-none d-lg-flex cart-info"
-              id="cart-info"
-            >
-              <span className="cart-info_icon mr-lg-2">
-                <i className="fas fa-shopping-cart"></i>
-              </span>
-              <p className="mb-0 text-capitalize item-count-box">
-                <span id="item-count">12</span>
-              </p>
-            </Nav>
+            <Link to="/cart">
+              <Nav
+                className="mx-lg-5 nav-info-items d-none d-lg-flex cart-info"
+                id="cart-info"
+                href="/cart"
+              >
+                <span className="cart-info_icon mr-lg-2">
+                  <i className="fas fa-shopping-cart"></i>
+                </span>
+                <p className="mb-0 text-capitalize item-count-box">
+                  <span id="item-count">12</span>
+                </p>
+              </Nav>
+            </Link>
           </Navbar.Collapse>
         </Navbar>
 

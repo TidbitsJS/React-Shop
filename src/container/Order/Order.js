@@ -47,7 +47,7 @@ const displayOrder = orderData.map((order, index) => (
 class Order extends Component {
   render() {
     return (
-      <section id="cakes" className="cakes py-5">
+      <section id="order" className="cakes py-5">
         <Container>
           <Row>
             <Col xs={10} sm={6} className="mx-auto text-center">
