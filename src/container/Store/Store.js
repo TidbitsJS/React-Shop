@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Container, Row, Col, InputGroup, FormControl } from "react-bootstrap";
 import "./store.css";
-import CardItem from "./Data/Card";
-import { data } from "./Data/Data";
+import CardItem from "./Card";
+import { data } from "./Data";
 
 class Store extends Component {
   constructor(props) {

@@ -3,6 +3,7 @@ import { Navbar, Nav, Container, Row, Col } from "react-bootstrap";
 import headericon from "../../images/logo.svg";
 import "./header.css";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 class Header extends Component {
   render() {
@@ -39,7 +40,7 @@ class Header extends Component {
                   <i className="fas fa-shopping-cart"></i>
                 </span>
                 <p className="mb-0 text-capitalize item-count-box">
-                  <span id="item-count">12</span>
+                  <span id="item-count">{this.props.amount}</span>
                 </p>
               </Nav>
             </Link>
@@ -63,4 +64,11 @@ class Header extends Component {
   }
 }
 
-export default Header;
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    amount: state.amount,
+  };
+};
+
+export default connect(mapStateToProps)(Header);
