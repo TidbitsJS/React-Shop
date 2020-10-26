@@ -58,6 +58,7 @@ export class CardItem extends Component {
                 <i
                   className="fas fa-shopping-cart"
                   onClick={() => addItem(card)}
+                  style={{ color: "black" }}
                 ></i>
               </Link>
             </span>

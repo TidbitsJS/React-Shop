@@ -23,6 +23,11 @@ class Header extends Component {
               <Nav.Link href="#services">Service</Nav.Link>
               <Nav.Link href="#order">order</Nav.Link>
               <Nav.Link href="#about">about</Nav.Link>
+              <Link to="/cart">
+                <Nav.Link href="#cart-display" id="cart-display">
+                  cart
+                </Nav.Link>
+              </Link>
             </Nav>
             <Nav className="mx-lg-2 nav-info-items d-none d-lg-flex">
               <span className="info-icon mx-lg-2">

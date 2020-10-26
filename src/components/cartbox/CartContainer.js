@@ -34,6 +34,7 @@ const CartContainer = ({ cart = [], total, dispatch }) => {
         <div className="cart-total">
           <h4
             style={{
+              color: "#fff",
               fontSize: "1.8rem",
               backgroundColor: "rgba(0,0,0,0.4)",
               padding: "1rem",

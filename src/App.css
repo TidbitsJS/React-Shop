@@ -43,3 +43,13 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+#cart-display {
+  display: none;
+}
+
+@media (max-width: 990px) {
+  #cart-display {
+    display: block;
+  }
+}
