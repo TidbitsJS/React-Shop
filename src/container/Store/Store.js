@@ -12,7 +12,45 @@ class Store extends Component {
       items: data,
     };
   }
+
+  componentDidMount() {
+    this.setState({
+      items: data,
+    });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log("prevState", prevProps, prevState);
+    /* if (prevState.items !== this.state.items) {
+      this.setState({
+        items: prevState.items,
+      });
+    } */
+  }
+
   render() {
+    const handleChange = (e) => {
+      let currentList = [];
+      let newList = [];
+
+      if (e.target.value !== "") {
+        currentList = data;
+        newList = currentList.filter((item) => {
+          const lc = item.name.toLowerCase();
+          const filter = e.target.value.toLowerCase();
+          return lc.includes(filter);
+        });
+      } else {
+        newList = data;
+      }
+
+      console.log("List", this.state.items, newList);
+
+      this.setState({
+        items: newList,
+      });
+    };
+
     const displayItem = (btn) => {
       console.log(btn);
       if (btn === "all") return this.setState({ items: data });
@@ -69,6 +107,7 @@ class Store extends Component {
                   aria-label="Item"
                   aria-describedby="basic-addon"
                   id="search-item"
+                  onChange={(e) => handleChange(e)}
                 />
               </InputGroup>
             </Col>
