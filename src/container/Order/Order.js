@@ -27,18 +27,19 @@ const displayOrder = orderData.map((order, index) => (
     xs={11}
     md={6}
     lg={4}
+    key={order.name + index}
     className="mx-auot my-4 text-center text-capitalize"
   >
     <h3 className="py-3">{order.name}</h3>
     <div className="text-muted">
       <p className="my-3"> {order.name} with a name</p>
-      <p class="my-3">custom ingredients</p>
-      <p class="my-3">custom size</p>
-      <p class="my-3">custom design</p>
-      <button type="button" class="btn btn-pink text-capitalize mb-3">
+      <p className="my-3">custom ingredients</p>
+      <p className="my-3">custom size</p>
+      <p className="my-3">custom design</p>
+      <button type="button" className="btn btn-pink text-capitalize mb-3">
         Order now
       </button>
-      <p class="text-lowercase mb-4">starting at $ {order.price}</p>
+      <p className="text-lowercase mb-4">starting at $ {order.price}</p>
       <Image src={order.url} fluid />
     </div>
   </Col>

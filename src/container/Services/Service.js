@@ -23,10 +23,10 @@ const serviceData = [
 class Service extends Component {
   render() {
     const displayService = serviceData.map((service, index) => (
-      <Col md={4} className="text-center  my-3">
+      <Col md={4} className="text-center  my-3" key={service.name + index}>
         <img src={service.url} alt={service.name + "Icon"} />
         <h6 className="text-uppercase my-3 service-title">{service.name}</h6>
-        <p class="w-75 mx-auto text-left service-text">
+        <p className="w-75 mx-auto text-left service-text">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
           recusandae fugit temporibus omnis quod aliquam iure voluptatem labore
           id. Magni placeat dicta aliquid commodi dolorum laborum tempore quae

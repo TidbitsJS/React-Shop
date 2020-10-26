@@ -13,17 +13,17 @@ class Footer extends Component {
                 <strong className="banner-title">Grandma's</strong>
               </h1>
               <div className="footer-icons mt-3 d-flex justify-content-around flex-wrap">
-                <a href="#facebook" class="footer-icon">
-                  <i class="fab fa-facebook"></i>
+                <a href="#facebook" className="footer-icon">
+                  <i className="fab fa-facebook"></i>
                 </a>
-                <a href="#twitter" class="footer-icon">
-                  <i class="fab fa-twitter"></i>
+                <a href="#twitter" className="footer-icon">
+                  <i className="fab fa-twitter"></i>
                 </a>
-                <a href="#instagram" class="footer-icon">
-                  <i class="fab fa-instagram"></i>
+                <a href="#instagram" className="footer-icon">
+                  <i className="fab fa-instagram"></i>
                 </a>
-                <a href="#google" class="footer-icon">
-                  <i class="fab fa-google-plus"></i>
+                <a href="#google" className="footer-icon">
+                  <i className="fab fa-google-plus"></i>
                 </a>
               </div>
             </Col>
@@ -32,21 +32,21 @@ class Footer extends Component {
               className="footer-contact text-center text-capitalize p-5"
             >
               <h3 className="mb-5">contact</h3>
-              <p class="d-flex flex-wrap">
-                <span class="mr-4 footer-icon">
-                  <i class="fas fa-map"></i>
+              <p className="d-flex flex-wrap">
+                <span className="mr-4 footer-icon">
+                  <i className="fas fa-map"></i>
                 </span>
                 <span>221 baker street, London</span>
               </p>
-              <p class="d-flex flex-wrap">
-                <span class="mr-4 footer-icon">
-                  <i class="fas fa-phone"></i>
+              <p className="d-flex flex-wrap">
+                <span className="mr-4 footer-icon">
+                  <i className="fas fa-phone"></i>
                 </span>
                 <span>+91 9834905510 </span>
               </p>
-              <p class="d-flex flex-wrap">
-                <span class="mr-4 footer-icon">
-                  <i class="fas fa-envelope"></i>
+              <p className="d-flex flex-wrap">
+                <span className="mr-4 footer-icon">
+                  <i className="fas fa-envelope"></i>
                 </span>
                 <span>enolaholmes@email.com</span>
               </p>
