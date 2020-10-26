@@ -172,3 +172,8 @@ h4 {
 .article-cart::-webkit-scrollbar {
   display: none;
 }
+
+.article-cart {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
